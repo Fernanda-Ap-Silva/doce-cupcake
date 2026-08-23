@@ -11,10 +11,11 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(135deg, #f7b6c8, #f48fb1);
     color: white;
     text-align: center;
     padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
@@ -162,4 +163,504 @@ footer {
     table {
         font-size: 14px;
     }
+}
+
+/* =========================
+   CARDÁPIO
+========================= */
+
+.cardapio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.produto {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.produto h3 {
+    margin-bottom: 10px;
+}
+
+.produto p {
+    margin-bottom: 10px;
+}
+
+.produto button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #f04f7d;
+    color: white;
+    transition: 0.3s;
+}
+
+.produto button:hover {
+    background-color: #d93d69;
+}
+
+/* CONTROLE DE QUANTIDADE DO CARRINHO */
+
+.controle-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.controle-quantidade form {
+    margin: 0;
+}
+
+.controle-quantidade button {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.controle-quantidade span {
+    min-width: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ===== CARRINHO ===== */
+
+.item-carrinho {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-remover {
+    width: auto !important;
+    padding: 0 14px !important;
+    background-color: #dc3545;
+    color: white;
+    font-size: 14px !important;
+}
+
+.btn-remover:hover {
+    background-color: #b02a37;
+}
+
+.voltar-cardapio {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.voltar-cardapio:hover {
+    background-color: #555;
+}
+
+.btn-finalizar {
+    width: auto;
+    padding: 12px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #198754;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-finalizar:hover {
+    background-color: #146c43;
+}
+
+/* ===== PAGAMENTO ===== */
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.pagamento-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.pagamento-card h3 {
+    margin-bottom: 15px;
+}
+
+.pagamento-card p {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.pagamento-card hr {
+    margin: 20px 0;
+}
+
+.pagamento-card label {
+    display: block;
+    padding: 12px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pagamento-card input[type="radio"] {
+    margin-right: 8px;
+}
+
+.pagamento-card button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #198754;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagamento-card button:hover {
+    background-color: #146c43;
+}
+
+.cardapio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.produto {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+/* BOTÃO VER CARRINHO */
+
+.acoes-cardapio {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.btn-carrinho {
+    display: inline-block;
+    background-color: #f04f7d;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-carrinho:hover {
+    background-color: #d93d69;
+}
+
+/* IMAGEM DOS PRODUTOS NO CARRINHO */
+
+.carrinho-imagem {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* BOTÃO CONTINUAR COMPRANDO */
+
+.voltar-cardapio {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    background-color: #f04f7d;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.voltar-cardapio:hover {
+    background-color: #d93d69;
+}
+
+/* ESPAÇO DO TÍTULO DA FORMA DE PAGAMENTO */
+
+.titulo-pagamento {
+    margin-bottom: 25px;
+}
+
+/* MENSAGEM DE PAGAMENTO CONFIRMADO */
+
+.mensagens-pagamento {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.mensagens-pagamento .success {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1b8f5a;
+    margin-bottom: 5px;
+}
+
+.mensagens-pagamento .success-sub {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f04f7d;
+    margin-top: 5px;
+}
+
+/* TÍTULO DO CARDÁPIO EM DESTAQUE */
+
+.titulo-cardapio {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* TELA DE CONFIRMAÇÃO DO PEDIDO */
+
+.confirmacao-pedido {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* BOTÃO FAZER NOVO PEDIDO */
+
+.confirmacao-pedido a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #f04f7d;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.confirmacao-pedido a:hover {
+    background-color: #d93f6b;
+}
+
+/* Área do botão de login */
+.area-login {
+    max-width: 1100px;
+    margin: 25px auto 0;
+}
+
+/* Botão Fazer Login */
+.botao.login {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #f54278;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.botao.login:hover {
+    background: #e83268;
+}
+
+/* ===== PÁGINA DE LOGIN ===== */
+
+.login-card {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card label {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.login-card input {
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.login-card button {
+    padding: 13px;
+    background: #f54278;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    background: #e83268;
+}
+
+.login-card > a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #f54278;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-card > a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagens de confirmação e erro */
+.mensagem {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 18px;
+    margin: 0 0 22px 0;
+
+    border-radius: 8px;
+
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Mensagem de sucesso */
+.mensagem.success,
+.mensagem.sucesso {
+    background-color: #eaf8ed;
+    color: #218838;
+    border: 1px solid #71d487;
+}
+
+/* Coloca o símbolo de confirmação */
+.mensagem.success::before,
+.mensagem.sucesso::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+    margin-right: 9px;
+
+    background-color: #42b95c;
+    color: white;
+    border-radius: 50%;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Mensagem de erro */
+.mensagem.error {
+    background-color: #fdeaea;
+    color: #b42318;
+    border: 1px solid #e8a4a4;
+}
+
+/* Área do cliente logado */
+.usuario-logado {
+    max-width: 1100px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 600;
+}
+
+.usuario-logado span {
+    color: #333;
+    font-size: 16px;
+}
+
+.btn-sair {
+    background-color: #f43f75;
+    color: white;
+    padding: 10px 22px;
+
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-sair:hover {
+    opacity: 0.85;
 }

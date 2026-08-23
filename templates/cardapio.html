@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Cupcake | Cardápio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🧁 Doce Cupcake</h1>
+        <p>Nosso Cardápio</p>
+    </header>
+
+    <div class="usuario-logado">
+    <span>Olá, {{ session["nome_cliente"] }}!</span>
+
+    <a href="{{ url_for('logout') }}" class="btn-sair">
+        Sair
+    </a>
+</div>
+
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+    {% if mensagens %}
+        {% for categoria, mensagem in mensagens %}
+            <div class="mensagem {{ categoria }}">
+                {{ mensagem }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+    <main>
+        
+        <h2 class="titulo-cardapio">Escolha seu cupcake</h2>
+
+<div class="acoes-cardapio">
+    <a href="{{ url_for('carrinho') }}" class="btn-carrinho">
+        🛒 Ver carrinho
+    </a>
+</div>
+
+        <div class="cardapio">
+
+            {% for produto in produtos %}
+
+            <div class="produto">
+                <img src="{{ url_for('static', filename='img/' + produto.imagem) }}" alt="{{ produto.nome }}" class="produto-imagem">
+                <h3>{{ produto.nome }}</h3>
+
+                <p>{{ produto.descricao }}</p>
+
+                <p>
+                    <strong>
+                        R$ {{ "%.2f"|format(produto.preco) }}
+                    </strong>
+                </p>
+
+                <p>Categoria: {{ produto.categoria }}</p>
+
+                <form action="{{ url_for('adicionar_carrinho', id_produto=produto.id_produto) }}"
+      method="POST">
+
+    <button type="submit">
+        Adicionar ao carrinho
+    </button>
+
+</form>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </main>
+
+</body>
+</html>

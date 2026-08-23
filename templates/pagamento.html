@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Cupcake | Pagamento</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🧁 Doce Cupcake</h1>
+        <p>Pagamento do Pedido</p>
+    </header>
+
+    <main class="container">
+
+        <h2>💳 Pagamento</h2>
+
+        <div class="pagamento-card">
+
+            <h3>Resumo do pedido</h3>
+
+            <p>
+                <strong>Pedido:</strong>
+                #{{ pedido.id_pedido }}
+            </p>
+
+            <p>
+                <strong>Valor total:</strong>
+                R$ {{ "%.2f"|format(pedido.valor_total) }}
+            </p>
+
+            <hr>
+
+            <h3 class="titulo-pagamento">Escolha a forma de pagamento</h3>
+
+            <form method="POST">
+
+                <label>
+                    <input type="radio"
+                           name="forma_pagamento"
+                           value="Pix"
+                           required>
+                    Pix
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio"
+                           name="forma_pagamento"
+                           value="Cartão">
+                    Cartão
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio"
+                           name="forma_pagamento"
+                           value="Dinheiro">
+                    Dinheiro
+                </label>
+
+                <br><br>
+
+                <button type="submit">
+                    Confirmar pagamento
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

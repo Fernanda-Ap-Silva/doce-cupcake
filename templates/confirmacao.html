@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doce Cupcake | Pedido Confirmado</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🧁 Doce Cupcake</h1>
+        <p>Pedido Confirmado</p>
+    </header>
+
+    <main class="container">
+
+        <div class="confirmacao-pedido">
+
+            <h2>✅ Pedido realizado com sucesso!</h2>
+
+            <p>
+                Seu pagamento foi confirmado.
+            </p>
+
+            <h3>Pedido #{{ pedido.id_pedido }}</h3>
+
+            <p>
+                <strong>Valor total:</strong>
+                R$ {{ "%.2f"|format(pedido.valor_total) }}
+            </p>
+
+            <p>
+                <strong>Forma de pagamento:</strong>
+                {{ forma_pagamento }}
+            </p>
+
+            <p class="mensagem-obrigado">
+                Obrigada pela preferência! 💗
+            </p>
+
+            <a href="{{ url_for('cardapio') }}" class="btn">
+                🛍️ Fazer novo pedido
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

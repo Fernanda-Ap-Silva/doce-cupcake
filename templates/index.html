@@ -9,7 +9,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Projeto Integrador - Clientes</title>
+    <title>Doce Cupcake | Clientes</title>
 
     <link
         rel="stylesheet"
@@ -20,12 +20,18 @@
 <body>
 
     <header>
-        <h1>Projeto Integrador</h1>
+        <h1>🧁 Doce Cupcake</h1>
 
         <p>
             Cadastro e gerenciamento de clientes
         </p>
     </header>
+
+    <div class="area-login">
+    <a href="{{ url_for('login') }}" class="botao login">
+      🔒 Já tenho cadastro — Fazer Login
+    </a>
+</div>
 
 
     <main>
@@ -116,95 +122,7 @@
         </section>
 
 
-        <section class="card">
-
-            <h2>Clientes Cadastrados</h2>
-
-            <div class="tabela">
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>E-mail</th>
-                            <th>Telefone</th>
-                            <th>Ações</th>
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody>
-
-                        {% for cliente in clientes %}
-
-                        <tr>
-
-                            <td>
-                                {{ cliente[0] }}
-                            </td>
-
-                            <td>
-                                {{ cliente[1] }}
-                            </td>
-
-                            <td>
-                                {{ cliente[2] }}
-                            </td>
-
-                            <td>
-                                {{ cliente[4] }}
-                            </td>
-
-
-                            <td class="acoes">
-
-                                <a
-                                    href="{{ url_for(
-                                        'editar',
-                                        id_cliente=cliente[0]
-                                    ) }}"
-                                    class="botao editar"
-                                >
-                                    Editar
-                                </a>
-
-
-                                <form
-                                    action="{{ url_for(
-                                        'excluir',
-                                        id_cliente=cliente[0]
-                                    ) }}"
-                                    method="POST"
-                                    class="form-excluir"
-                                    onsubmit="return confirmarExclusao('{{ cliente[1] }}')"
-                                >
-
-                                    <button
-                                        type="submit"
-                                        class="botao excluir"
-                                    >
-                                        Excluir
-                                    </button>
-
-                                </form>
-
-                            </td>
-
-                        </tr>
-
-                        {% endfor %}
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </section>
+        
 
     </main>
 
