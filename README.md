@@ -1,22 +1,36 @@
-# Projeto Integrador - Sistema de Gerenciamento de Clientes
+# 🧁 Doce Cupcake — Sistema de Gerenciamento de Confeitaria
 
-Projeto desenvolvido como aplicação prática de conceitos de desenvolvimento web, programação em Python e banco de dados.
+Projeto desenvolvido como parte do **Projeto Integrador**, com o objetivo de criar uma aplicação web para gerenciamento e vendas de produtos de uma confeitaria.
 
-O sistema permite realizar o gerenciamento de clientes por meio de uma interface web integrada a um banco de dados MySQL.
+O sistema Doce Cupcake permite visualizar o cardápio, adicionar produtos ao carrinho, realizar pedidos e pagamentos, além de possuir estrutura para gerenciamento de clientes, produtos e pedidos.
 
-## Funcionalidades
+## 📌 Funcionalidades
 
-O sistema possui as operações de CRUD:
+- Exibição do cardápio de cupcakes
+- Visualização dos produtos com imagens
+- Carrinho de compras
+- Adição de produtos ao carrinho
+- Controle de quantidade dos produtos
+- Confirmação do pedido
+- Tela de pagamento
+- Login de usuários
+- Cadastro e gerenciamento de clientes
+- Cadastro e gerenciamento de produtos
+- Integração com banco de dados MySQL
+- Interface web responsiva
 
-- Cadastrar clientes
-- Listar clientes cadastrados
-- Atualizar dados de clientes
-- Excluir clientes
-- Validar e-mails duplicados
-- Confirmar exclusão antes de remover um cliente
-- Exibir mensagens de sucesso e erro
+## 🧁 Produtos
 
-## Tecnologias Utilizadas
+O cardápio possui diferentes opções de cupcakes, como:
+
+- Chocolate
+- Baunilha
+- Nutella
+- Red Velvet
+- Festa
+- Aniversário
+
+## 🛠️ Tecnologias Utilizadas
 
 - Python
 - Flask
@@ -28,96 +42,28 @@ O sistema possui as operações de CRUD:
 - MySQL Connector/Python
 - python-dotenv
 
-## Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 ```text
 projeto_integrador/
 │
 ├── static/
+│   ├── img/
 │   ├── script.js
 │   └── style.css
 │
 ├── templates/
+│   ├── cardapio.html
+│   ├── carrinho.html
+│   ├── confirmacao.html
 │   ├── editar.html
-│   └── index.html
+│   ├── index.html
+│   ├── login.html
+│   └── pagamento.html
 │
 ├── app.py
 ├── app_terminal.py
 ├── database.sql
 ├── requirements.txt
 ├── .gitignore
-├── .env
 └── README.md
-```
-
-## Banco de Dados
-
-O projeto utiliza o MySQL.
-
-O arquivo `database.sql` contém os comandos necessários para criar o banco de dados e a tabela de clientes.
-
-Banco:
-
-```text
-projeto_integrador
-```
-
-Tabela:
-
-```text
-clientes
-```
-
-## Instalação das Dependências
-
-Com o ambiente virtual ativado, execute:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Configuração
-
-Crie um arquivo `.env` na raiz do projeto e informe a senha do MySQL:
-
-```text
-MYSQL_PASSWORD=sua_senha_do_mysql
-```
-
-O arquivo `.env` não deve ser enviado para repositórios públicos.
-
-## Executando o Projeto
-
-Execute:
-
-```bash
-python app.py
-```
-
-Depois acesse no navegador:
-
-```text
-http://127.0.0.1:5000
-```
-
-## Operações CRUD
-
-**Create:** cadastro de novos clientes.
-
-**Read:** visualização dos clientes cadastrados.
-
-**Update:** edição dos dados de um cliente.
-
-**Delete:** exclusão de clientes com confirmação antes da remoção.
-
-## Segurança
-
-As credenciais sensíveis do banco de dados são armazenadas em variável de ambiente utilizando `python-dotenv`.
-
-O arquivo `.env` é ignorado pelo Git por meio do `.gitignore`.
-
-## Autora
-
-Fernanda Silva
-
-Curso: Sistemas de Informação
