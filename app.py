@@ -13,11 +13,12 @@ app.secret_key = "doce-cupcake-chave-secreta"
 
 def conectar_banco():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
+        host=os.getenv("MYSQL_HOST", "localhost"),
+        user=os.getenv("MYSQL_USER", "root"),
         password=os.getenv("MYSQL_PASSWORD"),
-        database="projeto_integrador"
+        database=os.getenv("MYSQL_DATABASE", "projeto_integrador")
     )
+
 @app.route("/")
 def inicio():
     return redirect(url_for("login"))
