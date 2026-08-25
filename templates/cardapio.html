@@ -48,9 +48,11 @@
         <div class="cardapio">
 
             {% for produto in produtos %}
-
             <div class="produto">
-                <img src="{{ url_for('static', filename='img/' + produto.imagem) }}" alt="{{ produto.nome }}" class="produto-imagem">
+            <div class="produto-imagem-container">
+            
+                <img src="{{ url_for('static', filename='img/' + (produto.imagem or 'cupcake.png')) }}" alt="{{ produto.nome }}" class="produto-imagem">
+                </div>
                 <h3>{{ produto.nome }}</h3>
 
                 <p>{{ produto.descricao }}</p>

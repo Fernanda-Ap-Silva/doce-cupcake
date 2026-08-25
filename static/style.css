@@ -364,14 +364,19 @@ footer {
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.produto-imagem-container {
+    width: 100%;
 }
 
 .produto-imagem {
     width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 10px;
+    height: auto;
     display: block;
+    border-radius: 10px;
 }
 
 /* BOTÃO VER CARRINHO */

@@ -8,12 +8,13 @@ load_dotenv()
 
 
 app = Flask(__name__)
-app.secret_key = "doce-cupcake-chave-secreta"
+app.secret_key = os.getenv("SECRET_KEY", "chave-local-desenvolvimento")
 
 
 def conectar_banco():
     return mysql.connector.connect(
         host=os.getenv("MYSQL_HOST", "localhost"),
+        port=int(os.getenv("MYSQL_PORT", 3306)),
         user=os.getenv("MYSQL_USER", "root"),
         password=os.getenv("MYSQL_PASSWORD"),
         database=os.getenv("MYSQL_DATABASE", "projeto_integrador")
@@ -575,8 +576,8 @@ def finalizar_pedido():
     cursor.execute(
         """
         INSERT INTO pedidos
-            (id_cliente, status, valor_total)
-        VALUES (%s, 'Pendente', %s)
+            (id_cliente, status_pedido, valor_total)
+        VALUES (%s, 'Em preparo', %s)
         """,
         (id_cliente, total)
     )
@@ -671,7 +672,7 @@ def pagamento(id_pedido):
             """
             INSERT INTO pagamentos
                 (id_pedido, forma_pagamento, status_pagamento)
-            VALUES (%s, %s, 'Pago')
+            VALUES (%s, %s, 'Aprovado')
             """,
             (id_pedido, forma_pagamento)
         )
@@ -679,7 +680,7 @@ def pagamento(id_pedido):
         cursor.execute(
             """
             UPDATE pedidos
-            SET status = 'Pago'
+            SET status_pedido = 'Em preparo'
             WHERE id_pedido = %s
             """,
             (id_pedido,)
